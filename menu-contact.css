@@ -1,0 +1,493 @@
+/* ============================================
+   STYLES COMMUNS (Contact + Menu)
+   Niveau débutant : commentaires en français
+   ============================================ */
+
+/* On enlève les marges par défaut du navigateur */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans 3", sans-serif;
+  background-color: #F2EFE9;
+}
+
+/* Les titres utilisent une autre police */
+h1, h2, h3, .nav-brand {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+
+/* ========== EN-TÊTE (NAV) ========== */
+/* La barre reste en haut quand on scrolle */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Pour que le contenu ne passe pas sous la nav */
+body {
+  padding-top: 60px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 1.5rem;
+  gap: 1.5rem;
+}
+
+.nav-brand {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #AD2F2F;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand svg {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+header nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+header nav a:hover {
+  color: #AD2F2F;
+}
+
+.nav-cta {
+  background-color: #AD2F2F;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(173,47,47,0.25);
+}
+
+.nav-cta:hover {
+  background-color: #AD2F2F;
+}
+
+
+/* ========== PAGE MENU ========== */
+.main-menu {
+  background-color: #F2EFE9;
+  padding: 2.5rem 1.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-menu h1 {
+  text-align: center;
+  color: #2F4F4F;
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.main-menu h2 {
+  text-align: center;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  margin: 0 0 2rem 0;
+  line-height: 1.45;
+}
+
+/* Grille : 3 colonnes de cartes */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+/* Une carte = une image + un bloc texte en dessous */
+.carte-plat {
+  margin: 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.carte-plat img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  background-color: #eee;
+}
+
+/* Pour le carpaccio : on décale un peu l'image pour mieux centrer le plat */
+.img-carpaccio {
+  object-position: 40% 35%;
+}
+
+.carte-contenu {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.carte-plat h3 {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.carte-plat p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* En bas de la carte : prix à gauche, bouton + à droite */
+.carte-bas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+.prix {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #AD2F2F;
+}
+
+.bouton-plus {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.bouton-plus svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.bouton-plus:hover svg path {
+  fill: #8B2828;
+}
+
+/* Sur petit écran : 2 colonnes puis 1 */
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ========== PAGE CONTACT ========== */
+.main-contact {
+  background-color: #F2EFE9;
+  min-height: 60vh;
+  padding: 2.5rem 1.5rem;
+}
+
+.main-wrap {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2 colonnes : infos à gauche, formulaire à droite */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Bloc de gauche : titre + texte + lignes contact */
+.bloc-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bloc-infos h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2F4F4F;
+  margin: 0;
+}
+
+.texte-intro {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Une ligne = une icône + un paragraphe */
+.ligne-contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0;
+  margin-bottom: 1.25rem;
+}
+
+.ligne-contact:last-child {
+  margin-bottom: 0;
+}
+
+.ligne-contact svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.ligne-contact p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Carte blanche du formulaire */
+.carte-formulaire {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.75rem;
+}
+
+.carte-formulaire form label {
+  display: block;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.35rem;
+}
+
+.carte-formulaire form input,
+.carte-formulaire form select,
+.carte-formulaire form textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.carte-formulaire form textarea {
+  resize: vertical;
+  min-height: 4rem;
+}
+
+/* Chaque ligne du formulaire */
+.ligne-form {
+  margin-bottom: 1rem;
+}
+
+/* Ligne avec 2 champs côte à côte */
+.ligne-form-deux {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.ligne-form-deux div label,
+.ligne-form-deux div input,
+.ligne-form-deux div select {
+  display: block;
+  width: 100%;
+}
+
+.ligne-form-deux div label {
+  margin-bottom: 0.35rem;
+}
+
+.carte-formulaire form button[type="submit"] {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #AD2F2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.carte-formulaire form button[type="submit"]:hover {
+  background-color: #AD2F2F;
+}
+
+/* Sur petit écran : une seule colonne */
+@media (max-width: 700px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .ligne-form-deux {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ========== PIED DE PAGE ========== */
+footer {
+  font-family: "Source Sans 3", sans-serif;
+  background-color: #353839;
+  color: white;
+  padding: 2.5rem 1.5rem 1.5rem;
+}
+
+.footer-wrap {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col .footer-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: white;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.9);
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  text-decoration: none;
+}
+
+.footer-icon:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.footer-icon svg {
+  flex-shrink: 0;
+  fill: white;
+}
+
+.footer-links,
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li,
+.footer-list li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-list li {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.95rem;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin: 0 0 1.25rem 0;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
