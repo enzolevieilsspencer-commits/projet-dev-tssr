@@ -53,23 +53,6 @@ Le sujet demande aussi **3 fonctionnalités** :
 
 ---
 
-## Comment voir le site ?
-
-Le site est fait de **fichiers statiques** (HTML, CSS, images). Pour le voir :
-
-1. **Ouvrir un fichier HTML dans le navigateur**  
-   - Double-cliquer sur `index.html`, `Menu.html` ou `contact.html`, **ou**  
-   - Glisser-déposer le fichier dans une fenêtre Chrome, Firefox, Edge, etc.
-
-2. **Liens entre les pages**  
-   Les pages sont reliées par des **liens** (Accueil, Menu, Contact/Réservation) en haut du site. On peut naviguer d’une page à l’autre en cliquant.
-
-3. **Images**  
-   Les images des plats sont dans le dossier `img/` (carbonara, pizza, lasagnes, etc.). Les chemins dans le HTML pointent vers ce dossier.
-
-*Note :* Pour un “vrai” site en ligne, on mettrait ces fichiers sur un hébergeur. En local, ouvrir les fichiers suffit pour voir le rendu.
-
----
 
 ## Structure du projet (pour repère)
 
