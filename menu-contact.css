@@ -1,9 +1,7 @@
 /* ============================================
    STYLES COMMUNS (Contact + Menu)
-   Niveau débutant : commentaires en français
    ============================================ */
 
-/* On enlève les marges par défaut du navigateur */
 html, body {
   margin: 0;
   padding: 0;
@@ -11,14 +9,12 @@ html, body {
   background-color: #F2EFE9;
 }
 
-/* Les titres utilisent une autre police */
 h1, h2, h3, .nav-brand {
   font-family: "Playfair Display", Georgia, serif;
 }
 
 
 /* ========== EN-TÊTE (NAV) ========== */
-/* La barre reste en haut quand on scrolle */
 header {
   position: fixed;
   top: 0;
@@ -87,7 +83,6 @@ header nav a:hover {
   border-radius: 999px;
   font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(173,47,47,0.25);
 }
 
 .nav-cta:hover {
@@ -119,6 +114,74 @@ header nav a:hover {
   color: #555;
   margin: 0 0 2rem 0;
   line-height: 1.45;
+}
+
+/* Filtrer les plats */
+.filtre-plats {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: fit-content;
+  margin: 0 0 2rem 0;
+}
+
+.filtre-plats svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.filtre-plats select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid rgba(0,0,0,0.12);
+  background-color: white;
+  color: #333;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  padding: 0.55rem 2.2rem 0.55rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 120ms ease;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  background-image:
+    linear-gradient(45deg, transparent 50%, #AD2F2F 50%),
+    linear-gradient(135deg, #AD2F2F 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 18px) 52%,
+    calc(100% - 12px) 52%,
+    0 0;
+  background-size:
+    6px 6px,
+    6px 6px,
+    100% 100%;
+  background-repeat: no-repeat;
+}
+
+.filtre-plats select:hover {
+  border-color: rgba(173, 47, 47, 0.35);
+}
+
+.filtre-plats select:focus {
+  border-color: rgba(173, 47, 47, 0.65);
+  box-shadow: 0 0 0 4px rgba(173, 47, 47, 0.12);
+}
+
+.filtre-plats select:active {
+  transform: translateY(1px);
+}
+
+.filtre-plats select option {
+  color: #333;
+}
+
+.filtre-plats select option[value=""] {
+  color: #666;
 }
 
 /* Grille : 3 colonnes de cartes */
@@ -159,6 +222,8 @@ header nav a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  flex: 1;
+  min-height: 0;
 }
 
 .carte-plat h3 {
@@ -174,14 +239,17 @@ header nav a:hover {
   color: #555;
   margin: 0;
   line-height: 1.4;
+  flex: 1;
+  min-height: 0;
 }
 
-/* En bas de la carte : prix à gauche, bouton + à droite */
+/* En bas de la carte : prix à gauche, bouton + à droite (toujours aligné en bas grâce au flex) */
 .carte-bas {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 0.25rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 .prix {

@@ -22,15 +22,49 @@
             <button type="button" class="nav-cta">Réserver</button>
         </nav>
     </header>
-
+    
     <!-- Contenu principal : titre + grille de plats -->
     <main class="main-menu">
         <h1>Nos Spécialités</h1>
         <h2>Découvrez nos plats signature préparés avec amour selon les recettes traditionnelles de Nonna</h2>
+        
+        <!-- filtrer les plats-->
+         <div class="filtre-plats" aria-label="Filtrer les plats">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 4.6C3 4.03995 3 3.75992 3.10899 3.54601C3.20487 3.35785 3.35785 3.20487 3.54601 3.10899C3.75992 3 4.03995 3 4.6 3H19.4C19.9601 3 20.2401 3 20.454 3.10899C20.6422 3.20487 20.7951 3.35785 20.891 3.54601C21 3.75992 21 4.03995 21 4.6V6.33726C21 6.58185 21 6.70414 20.9724 6.81923C20.9479 6.92127 20.9075 7.01881 20.8526 7.10828C20.7908 7.2092 20.7043 7.29568 20.5314 7.46863L14.4686 13.5314C14.2957 13.7043 14.2092 13.7908 14.1474 13.8917C14.0925 13.9812 14.0521 14.0787 14.0276 14.1808C14 14.2959 14 14.4182 14 14.6627V17L10 21V14.6627C10 14.4182 10 14.2959 9.97237 14.1808C9.94787 14.0787 9.90747 13.9812 9.85264 13.8917C9.7908 13.7908 9.70432 13.7043 9.53137 13.5314L3.46863 7.46863C3.29568 7.29568 3.2092 7.2092 3.14736 7.10828C3.09253 7.01881 3.05213 6.92127 3.02763 6.81923C3 6.70414 3 6.58185 3 6.33726V4.6Z" stroke="#AD2F2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                <select id="filtre" name="filtre_repas">
+                    <option value="">Filtre</option>
+                    <option value="1">Entrée</option>
+                    <option value="2">Plat</option>
+                    <option value="3">Déssert</option>
+                </select>
+                    
+         </div>
 
         <!-- Grille de cartes (3 colonnes) -->
         <div class="menu-grid">
-            <figure class="carte-plat">
+            <figure class="carte-plat" id="antipasti">
+                <img src="img/bruschetta.png" alt="Bruschetta" class="img-bruschetta"> 
+                <div class="carte-contenu">
+                    <h3>Bruschetta</h3>
+                    <p>Tomates fraîches, basilic, parmesan et huile d'olive</p>
+                    <div class="carte-bas">
+                        <span class="prix">10€</span>
+                        <button type="button" class="bouton-plus"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 7.34784 18.9464 4.8043 17.0711 2.92893C15.1957 1.05357 12.6522 0 10 0C7.34784 0 4.8043 1.05357 2.92893 2.92893C1.05357 4.8043 0 7.34784 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C4.8043 18.9464 7.34784 20 10 20ZM9.0625 13.4375V10.9375H6.5625C6.04297 10.9375 5.625 10.5195 5.625 10C5.625 9.48047 6.04297 9.0625 6.5625 9.0625H9.0625V6.5625C9.0625 6.04297 9.48047 5.625 10 5.625C10.5195 5.625 10.9375 6.04297 10.9375 6.5625V9.0625H13.4375C13.957 9.0625 14.375 9.48047 14.375 10C14.375 10.5195 13.957 10.9375 13.4375 10.9375H10.9375V13.4375C10.9375 13.957 10.5195 14.375 10 14.375C9.48047 14.375 9.0625 13.957 9.0625 13.4375Z" fill="#AD2F2F"/></svg></button>
+                    </div>
+                </div>
+            </figure>
+            <figure class="carte-plat" id="antipasti">
+                <img src="img/carpaccio.png" alt="Carpaccio" class="img-carpaccio">
+                <div class="carte-contenu">
+                    <h3>Carpaccio</h3>
+                    <p>Fine tranches de bœuf, roquette, copeaux de parmesan et huile d'olive</p>
+                    <div class="carte-bas">
+                        <span class="prix">12€</span>
+                        <button type="button" class="bouton-plus"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 7.34784 18.9464 4.8043 17.0711 2.92893C15.1957 1.05357 12.6522 0 10 0C7.34784 0 4.8043 1.05357 2.92893 2.92893C1.05357 4.8043 0 7.34784 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C4.8043 18.9464 7.34784 20 10 20ZM9.0625 13.4375V10.9375H6.5625C6.04297 10.9375 5.625 10.5195 5.625 10C5.625 9.48047 6.04297 9.0625 6.5625 9.0625H9.0625V6.5625C9.0625 6.04297 9.48047 5.625 10 5.625C10.5195 5.625 10.9375 6.04297 10.9375 6.5625V9.0625H13.4375C13.957 9.0625 14.375 9.48047 14.375 10C14.375 10.5195 13.957 10.9375 13.4375 10.9375H10.9375V13.4375C10.9375 13.957 10.5195 14.375 10 14.375C9.48047 14.375 9.0625 13.957 9.0625 13.4375Z" fill="#AD2F2F"/></svg></button>
+                    </div>
+                </div>
+            </figure>
+            <figure class="carte-plat" id="plat">
                 <img src="img/carbonara.png" alt="Pasta Carbonara">
                 <div class="carte-contenu">
                     <h3>Pasta Carbonara</h3>
@@ -41,7 +75,7 @@
                     </div>
                 </div>
             </figure>
-            <figure class="carte-plat">
+            <figure class="carte-plat" id="plat">
                 <img src="img/pizza-margharita.png" alt="Pizza Margherita">
                 <div class="carte-contenu">
                     <h3>Pizza Margherita</h3>
@@ -52,18 +86,18 @@
                     </div>
                 </div>
             </figure>
-            <figure class="carte-plat">
+            <figure class="carte-plat" id="plat">
                 <img src="img/fiorentina.png" alt="Fiorentina">
                 <div class="carte-contenu">
                     <h3>Fiorentina</h3>
-                    <p>Morceau de bœuf de Chianina</p>
+                    <p>Morceau de bœuf de Chianina avec des légumes de saison et pommes de terre</p>
                     <div class="carte-bas">
                         <span class="prix">8€</span>
                         <button type="button" class="bouton-plus"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 7.34784 18.9464 4.8043 17.0711 2.92893C15.1957 1.05357 12.6522 0 10 0C7.34784 0 4.8043 1.05357 2.92893 2.92893C1.05357 4.8043 0 7.34784 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C4.8043 18.9464 7.34784 20 10 20ZM9.0625 13.4375V10.9375H6.5625C6.04297 10.9375 5.625 10.5195 5.625 10C5.625 9.48047 6.04297 9.0625 6.5625 9.0625H9.0625V6.5625C9.0625 6.04297 9.48047 5.625 10 5.625C10.5195 5.625 10.9375 6.04297 10.9375 6.5625V9.0625H13.4375C13.957 9.0625 14.375 9.48047 14.375 10C14.375 10.5195 13.957 10.9375 13.4375 10.9375H10.9375V13.4375C10.9375 13.957 10.5195 14.375 10 14.375C9.48047 14.375 9.0625 13.957 9.0625 13.4375Z" fill="#AD2F2F"/></svg></button>
                     </div>
                 </div>
             </figure>
-            <figure class="carte-plat">
+            <figure class="carte-plat" id="plat">
                 <img src="img/lasagna.png" alt="Lasagna">
                 <div class="carte-contenu">
                     <h3>Lasagna</h3>
@@ -74,7 +108,7 @@
                     </div>
                 </div>
             </figure>
-            <figure class="carte-plat">
+            <figure class="carte-plat" id="plat">
                 <img src="img/risotto.png" alt="Risotto">
                 <div class="carte-contenu">
                     <h3>Risotto</h3>
@@ -85,13 +119,24 @@
                     </div>
                 </div>
             </figure>
-            <figure class="carte-plat">
-                <img src="img/carpaccio.png" alt="Carpaccio" class="img-carpaccio">
+            <figure class="carte-plat" id="dessert">
+                <img src="img/cannoli.png" alt="Cannoli" class="img-cannoli">
                 <div class="carte-contenu">
-                    <h3>Carpaccio</h3>
-                    <p>Fine tranches de bœuf, roquette, copeaux de parmesan et huile d'olive</p>
+                    <h3>Cannoli</h3>
+                    <p>Cannoli de Sicile, ricotta, sucre et cannella</p>
                     <div class="carte-bas">
-                        <span class="prix">12€</span>
+                        <span class="prix">9€</span>
+                        <button type="button" class="bouton-plus"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 7.34784 18.9464 4.8043 17.0711 2.92893C15.1957 1.05357 12.6522 0 10 0C7.34784 0 4.8043 1.05357 2.92893 2.92893C1.05357 4.8043 0 7.34784 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C4.8043 18.9464 7.34784 20 10 20ZM9.0625 13.4375V10.9375H6.5625C6.04297 10.9375 5.625 10.5195 5.625 10C5.625 9.48047 6.04297 9.0625 6.5625 9.0625H9.0625V6.5625C9.0625 6.04297 9.48047 5.625 10 5.625C10.5195 5.625 10.9375 6.04297 10.9375 6.5625V9.0625H13.4375C13.957 9.0625 14.375 9.48047 14.375 10C14.375 10.5195 13.957 10.9375 13.4375 10.9375H10.9375V13.4375C10.9375 13.957 10.5195 14.375 10 14.375C9.48047 14.375 9.0625 13.957 9.0625 13.4375Z" fill="#AD2F2F"/></svg></button>
+                    </div>
+                </div>
+            </figure>
+            <figure class="carte-plat" id="dessert">
+                <img src="img/tiramisu.png" alt="Tiramisu" class="img-tiramisu">
+                <div class="carte-contenu">
+                    <h3>Tiramisu</h3>
+                    <p>Tiramisu italien, café, cacao et mascarpone</p>
+                    <div class="carte-bas">
+                        <span class="prix">8€</span>
                         <button type="button" class="bouton-plus"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 7.34784 18.9464 4.8043 17.0711 2.92893C15.1957 1.05357 12.6522 0 10 0C7.34784 0 4.8043 1.05357 2.92893 2.92893C1.05357 4.8043 0 7.34784 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C4.8043 18.9464 7.34784 20 10 20ZM9.0625 13.4375V10.9375H6.5625C6.04297 10.9375 5.625 10.5195 5.625 10C5.625 9.48047 6.04297 9.0625 6.5625 9.0625H9.0625V6.5625C9.0625 6.04297 9.48047 5.625 10 5.625C10.5195 5.625 10.9375 6.04297 10.9375 6.5625V9.0625H13.4375C13.957 9.0625 14.375 9.48047 14.375 10C14.375 10.5195 13.957 10.9375 13.4375 10.9375H10.9375V13.4375C10.9375 13.957 10.5195 14.375 10 14.375C9.48047 14.375 9.0625 13.957 9.0625 13.4375Z" fill="#AD2F2F"/></svg></button>
                     </div>
                 </div>
@@ -107,8 +152,8 @@
                     <h3 class="footer-title">Dalla Mamma</h3>
                     <p class="footer-tagline">Ristorante Italiano authentique au cœur de Paris</p>
                     <div class="footer-social">
-                        <a href="#" class="footer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="#" class="footer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        <a href="https://www.instagram.com/nextenstudio_/" class="footer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://www.instagram.com/nextenstudio_/" class="footer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
                         <a href="contact.html" class="footer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
                     </div>
                 </div>
