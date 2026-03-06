@@ -1,0 +1,372 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+    
+  }
+
+  h1, h2, h3, .nav-brand {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  h1 {
+    text-align: center;
+    color: #f2efe9;
+    font-size: 64px;
+    margin: 400px 550px 0 0;
+    text-shadow: 5px 5px 20px rgba(0,0,0,0.8);
+    -webkit-text-stroke: 0.5px rgb(204, 44, 44);
+  }
+
+  h2 {
+    font-size: 36px;
+    font-family: sans-serif;
+  }
+
+  p {
+    font-size: 18px
+}
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  body {
+    padding-top: 60px;
+  }
+
+
+
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .nav-brand {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #AD2F2F;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-brand svg {
+    height: 24px;
+    width: auto;
+    display: block;
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+  }
+  
+  header nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  
+  header nav a:hover {
+    color: #AD2F2F;
+  }
+  
+  .nav-cta {
+    background-color: #AD2F2F;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(173,47,47,0.25);
+  }
+  
+  .nav-cta:hover {
+    background-color: #AD2F2F;
+  }
+ /*fin nav*/
+
+ #zone-flot {
+    background-image: url(img/cuoco.jpg);
+    padding:100px ;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#notre_histoire {
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 90px ;
+    background-color: #F2EFE9;
+
+}
+
+#notre_histoire img {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow:0px 10px 20px #333;
+}
+
+#notre_histoire article {
+    display: flex;
+    flex-direction: column;
+    max-width:50% ;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .main-menu {
+    
+    padding: 2.5rem 1.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Une carte = une image + un bloc texte en dessous */
+.carte-plat {
+    margin: 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+  }
+
+  .carte-plat:hover {
+    transform: scale(1.05);
+  }
+
+  .carte-plat img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    background-color: #eee;
+  }
+
+  .main-menu h2 {
+    text-align: center;
+    color: #2F4F4F;
+    font-size: 1.75rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .main-menu h3 {
+    text-align: center;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+    margin: 0 0 2rem 0;
+    line-height: 1.45;
+  }
+
+  .carte-contenu {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+  }
+  
+  .carte-plat h3 {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+  }
+  
+  .carte-plat p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* En bas de la carte : prix à gauche, bouton + à droite */
+.carte-bas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+.prix {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #AD2F2F;
+}
+
+.bouton-plus {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.bouton-plus svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.bouton-plus:hover svg path {
+  fill: #8B2828;
+}
+
+/*debut footer*/
+
+footer {
+    font-family: "Source Sans 3", sans-serif;
+    background-color: #353839;
+    color: white;
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+  
+  .footer-wrap {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-col .footer-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: white;
+  }
+  
+  .footer-tagline {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .footer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-icon:hover {
+    background: rgba(255,255,255,0.25);
+  }
+  
+  .footer-icon svg {
+    flex-shrink: 0;
+    fill: white;
+  }
+  
+  .footer-links,
+  .footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-links li,
+  .footer-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-links a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  
+  .footer-links a:hover {
+    color: white;
+  }
+  
+  .footer-list li {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+  }
+  
+  .footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 0 0 1.25rem 0;
+  }
+  
+  .footer-copy {
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+
+  
+    
+  
