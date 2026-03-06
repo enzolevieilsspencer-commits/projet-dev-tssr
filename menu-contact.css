@@ -225,7 +225,12 @@ header nav a:hover {
   flex: 1;
   min-height: 0;
 }
-
+.carte-plat{
+    transition: transform 0.5s ease;
+}
+.carte-plat:hover {
+    transform:scale(1.05);
+}
 .carte-plat h3 {
   font-family: "Source Sans 3", sans-serif;
   font-size: 1.1rem;
