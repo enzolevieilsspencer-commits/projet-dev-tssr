@@ -102,6 +102,25 @@ html, body {
   .nav-cta:hover {
     background-color: #AD2F2F;
   }
+
+  /* Burger menu (desktop : caché) */
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .burger span {
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    display: block;
+    border-radius: 999px;
+  }
  /*fin nav*/
 
  #zone-flot {
@@ -363,6 +382,46 @@ footer {
   }
   
   @media (max-width: 768px) {
+    header nav {
+      position: relative;
+    }
+
+    /* Afficher l'icône burger sur mobile */
+    .burger {
+      display: flex;
+    }
+
+    /* Cacher le menu horizontal par défaut sur mobile */
+    header nav ul {
+      position: absolute;
+      top: 100%;
+      right: 1.5rem;
+      background-color: #fff;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      gap: 0.75rem;
+      display: none;
+      z-index: 120;
+    }
+
+    header nav ul.open {
+      display: flex;
+    }
+
+    /* Cacher le bouton Réserver en ligne, l'afficher seulement dans l'état ouvert */
+    .nav-cta {
+      display: none;
+    }
+
+    .nav-cta.open {
+      display: inline-block;
+      margin-left: 1.5rem;
+      margin-top: 0.75rem;
+    }
+
     .footer-grid {
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;

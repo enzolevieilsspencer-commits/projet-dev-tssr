@@ -1,3 +1,24 @@
+// Menu burger (toutes pages avec header/nav)
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("header nav");
+
+  if (!burger || !nav) {
+    return;
+  }
+
+  const navList = nav.querySelector("ul");
+  const navCta = nav.querySelector(".nav-cta");
+
+  burger.addEventListener("click", () => {
+    if (navList) {
+      navList.classList.toggle("open");
+    }
+    if (navCta) {
+      navCta.classList.toggle("open");
+    }
+  });
+});
 // Bloc de code pour filtrer les plats (page menu)
 document.addEventListener("DOMContentLoaded", () => {
   const selectFiltre = document.getElementById("filtre");
@@ -63,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const champEmail = document.getElementById("email");
       const champTelephone = document.getElementById("telephone");
       const champNbPersonnes = document.getElementById("nb-personnes");
+      const champDate = document.getElementById("date");
 
       // Regex pour le prénom et le nom :
       const regexNomPrenom = /^[a-zA-ZÀ-ÖØ-öø-ÿ]{3,}$/;
@@ -113,40 +135,17 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         champNbPersonnes.style.border = "1px solid green";
       }
-      // Compteur de places restantes
-      if (isValid) {
-        let places = localStorage.getItem("placesRestantes");
-        const message = document.createElement("div");
-        message.textContent = "Votre réservation a bien été prise en compte !";
-        message.style.color = "green";
-        formulaireReservation.appendChild(message);
-        if (places === null) {
-          places = CAPACITE_MAX;
-        }
-
-        places = Number(places);
-        const nbPersonnes = Number(champNbPersonnes.value);
-
-        // Si on demande plus de places qu'il n'en reste, on bloque la réservation
-        if (nbPersonnes > places) {
-          champNbPersonnes.style.border = "1px solid red";
-          textePlaces.textContent =
-            "Il ne reste plus assez de places pour cette réservation.";
-          textePlaces.style.color = "red";
-          return;
-        }
-
-        const nouveauCompteur = places - nbPersonnes;
-        localStorage.setItem("placesRestantes", nouveauCompteur);
-
-        // Mise à jour du texte en fonction du nombre de places restantes
-        if (nouveauCompteur > 0) {
-          textePlaces.textContent = "Il reste " + nouveauCompteur + " places.";
-        } else {
-          textePlaces.textContent = "Il n'y a plus assez de place.";
-        }
-        formulaireReservation.appendChild(message);
+      if (!booking[champDate.value]) {
+        booking[champDate.value] = 0;
       }
+      booking[champDate.value] += parseInt(champNbPersonnes.value);
+      console.log(booking);
     });
   }
 });
+
+// Gestion des réservations
+const CAPACITE_MAX = 30;
+let booking = {
+  "10/06/2026": 10,
+};
