@@ -21,6 +21,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Bloc de code pour valider le formulaire de réservation (page contact)
 document.addEventListener("DOMContentLoaded", () => {
+  const textePlaces = document.getElementById("places-restantes");
+  const CAPACITE_MAX = 30;
+
+  // Initialisation des places au chargement
+  if (textePlaces) {
+    let places = localStorage.getItem("placesRestantes");
+
+    if (places === null) {
+      places = CAPACITE_MAX;
+      localStorage.setItem("placesRestantes", places);
+    }
+
+    places = Number(places);
+
+    // Si la valeur stockée est invalide ou négative, on réinitialise
+    if (Number.isNaN(places) || places < 0) {
+      places = CAPACITE_MAX;
+      localStorage.setItem("placesRestantes", places);
+    }
+
+    if (places > 0) {
+      textePlaces.textContent = "Il reste " + places + " places.";
+    } else {
+      textePlaces.textContent = "Il n'y a plus assez de place.";
+    }
+  }
+
   const formulaireReservation = document.querySelector(
     ".carte-formulaire form",
   );
@@ -35,12 +62,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const champNom = document.getElementById("nom");
       const champEmail = document.getElementById("email");
       const champTelephone = document.getElementById("telephone");
+      const champNbPersonnes = document.getElementById("nb-personnes");
 
+      // Regex pour le prénom et le nom :
       const regexNomPrenom = /^[a-zA-ZÀ-ÖØ-öø-ÿ]{3,}$/;
+
+      // Regex pour l'email :
+
       const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      // Regex pour le téléphone français :
       const regexTelephone = /^0\d{9}$/;
 
-      // Prénom
+      // Vérification du prénom
       if (!regexNomPrenom.test(champPrenom.value.trim())) {
         champPrenom.style.border = "1px solid red";
         isValid = false;
@@ -48,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         champPrenom.style.border = "1px solid green";
       }
 
-      // Nom
+      // Vérification du nom
       if (!regexNomPrenom.test(champNom.value.trim())) {
         champNom.style.border = "1px solid red";
         isValid = false;
@@ -56,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         champNom.style.border = "1px solid green";
       }
 
-      // Email
+      // Vérification de l'email
       if (!regexEmail.test(champEmail.value.trim())) {
         champEmail.style.border = "1px solid red";
         isValid = false;
@@ -64,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         champEmail.style.border = "1px solid green";
       }
 
-      // Téléphone
+      // Vérification du téléphone
       if (!regexTelephone.test(champTelephone.value.trim())) {
         champTelephone.style.border = "1px solid red";
         isValid = false;
@@ -72,11 +106,45 @@ document.addEventListener("DOMContentLoaded", () => {
         champTelephone.style.border = "1px solid green";
       }
 
-      // Si tout est valide, on peut afficher un message de confirmation
+      // Vérification du nombre de personnes (obligatoire)
+      if (!champNbPersonnes.value) {
+        champNbPersonnes.style.border = "1px solid red";
+        isValid = false;
+      } else {
+        champNbPersonnes.style.border = "1px solid green";
+      }
+      // Compteur de places restantes
       if (isValid) {
+        let places = localStorage.getItem("placesRestantes");
         const message = document.createElement("div");
         message.textContent = "Votre réservation a bien été prise en compte !";
         message.style.color = "green";
+        formulaireReservation.appendChild(message);
+        if (places === null) {
+          places = CAPACITE_MAX;
+        }
+
+        places = Number(places);
+        const nbPersonnes = Number(champNbPersonnes.value);
+
+        // Si on demande plus de places qu'il n'en reste, on bloque la réservation
+        if (nbPersonnes > places) {
+          champNbPersonnes.style.border = "1px solid red";
+          textePlaces.textContent =
+            "Il ne reste plus assez de places pour cette réservation.";
+          textePlaces.style.color = "red";
+          return;
+        }
+
+        const nouveauCompteur = places - nbPersonnes;
+        localStorage.setItem("placesRestantes", nouveauCompteur);
+
+        // Mise à jour du texte en fonction du nombre de places restantes
+        if (nouveauCompteur > 0) {
+          textePlaces.textContent = "Il reste " + nouveauCompteur + " places.";
+        } else {
+          textePlaces.textContent = "Il n'y a plus assez de place.";
+        }
         formulaireReservation.appendChild(message);
       }
     });

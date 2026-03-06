@@ -1,0 +1,37 @@
+Approche pour le système de comptage de places (version texte)
+
+1) Capacité maximale
+- Choisir un nombre de places max (ex : 30).
+- Au premier chargement de la page :
+  - Si aucune valeur n’existe dans le localStorage, on enregistre placesRestantes = 30.
+  - Si une valeur existe déjà, on la réutilise.
+
+2) Lien avec la validation du formulaire
+- Quand l’utilisateur clique sur “Valider / Réserver” :
+  - Vérifier que le formulaire est valide (champs remplis, email correct, etc.).
+  - Si le formulaire est valide :
+    - Lire la valeur actuelle de placesRestantes dans le localStorage.
+    - Vérifier si placesRestantes est strictement supérieure à 0.
+
+3) Cas où il reste des places (placesRestantes > 0)
+- Décrémenter placesRestantes de 1.
+- Réenregistrer la nouvelle valeur dans le localStorage.
+- Mettre à jour le texte affiché sur la page, par exemple :
+  - « Il reste X places » (avec la nouvelle valeur).
+- Afficher un message de confirmation de réservation réussie (optionnel).
+
+4) Cas où il n’y a plus de place (placesRestantes == 0)
+- Ne pas accepter la réservation.
+- Ne pas modifier le compteur.
+- Afficher le message :
+  - « Il n’y a plus assez de place. »
+- Option : désactiver le bouton de validation ou empêcher l’envoi du formulaire.
+
+5) Mise à jour du texte au chargement de la page
+- À chaque chargement de la page :
+  - Lire placesRestantes dans le localStorage.
+  - Si placesRestantes > 0 :
+    - Afficher « Il reste X places ».
+  - Si placesRestantes == 0 :
+    - Afficher « Il n’y a plus assez de place. ».
+
