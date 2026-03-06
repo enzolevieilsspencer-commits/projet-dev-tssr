@@ -1,0 +1,35 @@
+---
+description: Orchestration projet duo — répartition des fichiers et stratégie des branches
+alwaysApply: true
+---
+
+# Orchestration projet duo (Projet-DEV-TSSR)
+
+## Répartition des responsabilités
+
+### Toi (utilisateur)
+
+- **HTML** : `contact.html`, `Menu.html`
+- **CSS** : `menu-contact.css`
+
+### Ton ami
+
+- **HTML** : `index.html`
+- **CSS** : `style.css`
+
+### À définir plus tard
+
+- **JS** : `scripts.js` (répartition à voir ensemble)
+
+## Branches Git
+
+- **html** : travail sur les fichiers HTML (contact, Menu, index)
+- **css** : travail sur les fichiers CSS (menu-contact.css, style.css)
+- **js** : travail sur le JavaScript (scripts.js) — pour la suite
+
+## Règles d’orchestration
+
+1. Quand on touche à `contact.html`, `Menu.html` ou `menu-contact.css` → contexte "toi", cohérence avec ton travail.
+2. Quand on touche à `index.html` ou `style.css` → rappeler que c’est le périmètre de ton ami, ne pas écraser sans accord.
+3. Pour le JS : ne pas décider seul la répartition ; proposer des options si besoin.
+4. Garder les mêmes conventions (nommage, structure des dossiers, liens entre pages) pour que tout s’assemble proprement.

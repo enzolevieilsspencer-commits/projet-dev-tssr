@@ -1,7 +1,7 @@
 # Dalla Mamma — Site du restaurant
 
 Ce dépôt contient le **site web d’un restaurant fictif** nommé **Dalla Mamma**.  
-C’est un projet d’études : l’objectif est de créer un site moderne pour un restaurant qui veut attirer des clients.
+C’est un projet d’études : l’objectif est de créer un site moderne pour un restaurant.
 
 ---
 
@@ -19,16 +19,19 @@ Le site est fait avec des **fichiers HTML** (les pages), **CSS** (le design, les
 Le sujet demande **3 types de pages**. Voici ce qu’on a (ou ce qu’on prévoit) :
 
 ### 1. Accueil
+
 - **Rôle :** C’est la **page d’entrée** quand on arrive sur le site.
 - **Contenu :** L’ambiance du restaurant, une petite **accroche** pour donner envie de venir (texte, images, ton du lieu).
 - **Fichier :** `index.html` (c’est la page “par défaut” d’un site).
 
 ### 2. Menu
+
 - **Rôle :** Montrer **ce qu’on mange et boit** au restaurant.
 - **Contenu :** Les plats sont présentés sous forme de **cartes** (image + nom + description + prix), avec des **catégories** (entrées, plats, desserts, etc.).
 - **Fichier :** `Menu.html`
 
 ### 3. Réservation
+
 - **Rôle :** Permettre au client de **réserver une table**.
 - **Contenu :** Un **formulaire** (nom, prénom, date, nombre de personnes, message, etc.) qui doit être **vérifié avec du JavaScript** avant envoi (pour éviter les erreurs de saisie).
 - **Fichier :** `contact.html`
@@ -53,15 +56,14 @@ Le sujet demande aussi **3 fonctionnalités** :
 
 ---
 
-
 ## Structure du projet (pour repère)
 
-- **index.html** — Page d’accueil  
-- **Menu.html** — Page du menu (cartes, catégories)  
-- **contact.html** — Page de réservation (formulaire)  
-- **menu-contact.css** — Styles communs (design des pages Menu et Contact, barre de navigation, pied de page)  
-- **style.css** — Styles de la page d’accueil  
-- **scripts.js** — Scripts communs (validation formulaire, filtres menu, compteur de places, etc.)  
+- **index.html** — Page d’accueil
+- **Menu.html** — Page du menu (cartes, catégories)
+- **contact.html** — Page de réservation (formulaire)
+- **menu-contact.css** — Styles communs (design des pages Menu et Contact, barre de navigation, pied de page)
+- **style.css** — Styles de la page d’accueil
+- **scripts.js** — Scripts communs (validation formulaire, filtres menu, compteur de places, etc.)
 - **img/** — Dossier des images (plats, logo, etc.)
 
 Le projet peut être fait **à deux** : une personne s’occupe surtout de l’accueil (index + style.css), l’autre des pages Menu et Contact (Menu.html, contact.html + menu-contact.css). Le JavaScript peut être partagé.
@@ -70,9 +72,9 @@ Le projet peut être fait **à deux** : une personne s’occupe surtout de l’a
 
 ## Sujet de référence
 
-- **Sujet 02 – Restaurant fictif**  
-- Un restaurant branché a besoin d’un site moderne pour attirer des clients.  
-- **Pages :** Accueil (ambiance, accroche), Menu (cartes avec catégories), Réservation (formulaire validé en JS).  
+- **Sujet 02 – Restaurant fictif**
+- Un restaurant branché a besoin d’un site moderne pour attirer des clients.
+- **Pages :** Accueil (ambiance, accroche), Menu (cartes avec catégories), Réservation (formulaire validé en JS).
 - **Fonctionnalités :** Filtres sur le menu (entrées / plats / desserts), validation du formulaire de réservation, compteur de places restantes.
 
 ---
